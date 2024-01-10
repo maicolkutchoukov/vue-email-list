@@ -5,8 +5,22 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            message: 'Template HTML CSS Vue',
+            emails: [],
         };
-    }
+    },
+    mounted(){
+        for (let i = 0; i < 10; i++) {
+            axios
+            .get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then((res) =>{
+                let email = ''
+                email = res.data.response;
+                this.emails.push(email);
+                console.log(this.emails)
+
+            });
+        }
+            
+        }          
   // Monto l'istanza di Vue in pagina
 }).mount('#app');
