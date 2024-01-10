@@ -16,11 +16,9 @@ createApp({
                 let email = ''
                 email = res.data.response;
                 this.emails.push(email);
-                console.log(this.emails)
-
+                console.log(this.emails);
             });
-        }
-            
+        }          
         }          
   // Monto l'istanza di Vue in pagina
 }).mount('#app');
